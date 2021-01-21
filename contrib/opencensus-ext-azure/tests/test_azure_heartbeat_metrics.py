@@ -17,7 +17,10 @@ import os
 import platform
 import unittest
 
-import mock
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 import requests
 
 from opencensus.common.version import __version__ as opencensus_version

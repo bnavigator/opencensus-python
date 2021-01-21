@@ -16,7 +16,10 @@ import unittest
 from datetime import datetime
 
 import google.auth
-import mock
+try:
+    from unittest import mock
+except ImportError:
+    import mock
 from google.cloud import monitoring_v3
 
 from opencensus.common import utils
