@@ -128,7 +128,7 @@ class TestOpencensusMiddleware(unittest.TestCase):
         view_func = mock.Mock()
         middleware_obj.process_view(django_request, view_func)
 
-        self.assertEqual(span.name, 'mock.mock.Mock')
+        self.assertEqual(span.name.split('.')[1:], ['mock', 'Mock'])
 
     def test_excludelist_path(self):
         from opencensus.ext.django import middleware

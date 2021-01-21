@@ -234,7 +234,7 @@ class TestCollectorPrometheus(unittest.TestCase):
 
         with self.assertRaisesRegexp(
                 ValueError,
-                'unsupported aggregation type <class \'mock.mock.Mock\'>'):
+                'unsupported aggregation type <class \'(unittest|mock).mock.Mock\'>'):
             collector.to_metric(desc=desc, tag_values=[None], agg_data=agg)
 
     def test_collector_collect(self):
